@@ -5,7 +5,7 @@
 <!-- =================================================================================== -->
 <robot name="wx250s">
   <material name="black">
-    <texture filename="meshes/interbotix_black.png"/>
+    <color rgba="0.0 0.0 0.0 1.0"/>
   </material>
   <!-- Mobile base description starts here-->
   <link name="root_link"/>
