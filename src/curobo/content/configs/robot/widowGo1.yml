@@ -1,0 +1,52 @@
+##
+## Copyright (c) 2023 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+##
+## NVIDIA CORPORATION, its affiliates and licensors retain all intellectual
+## property and proprietary rights in and to this material, related
+## documentation and any modifications thereto. Any use, reproduction,
+## disclosure or distribution of this material and related documentation
+## without an express license agreement from NVIDIA CORPORATION or
+## its affiliates is strictly prohibited.
+##
+
+robot_cfg:
+  kinematics:
+    use_usd_kinematics: False
+    usd_path: "robot/widowx/widowGo1.usd"
+    usd_robot_root: "/robot"
+    isaac_usd_path: null
+    usd_flip_joints: {}
+    usd_flip_joint_limits: []
+
+    urdf_path: "robot/widowx/widowGo1.urdf"
+    asset_root_path: "robot/widowx/"
+    
+    base_link: "base"
+    ee_link: "wx250s_ee_gripper_link"
+    # link_names: null
+    lock_joints: null
+    extra_links: null
+
+    #TODO: Add collision link names and spheres
+    collision_link_names: null
+    collision_spheres: null
+    collision_sphere_buffer: 0.005 # float or Dict[str, float]
+    extra_collision_spheres: {} # Dict[str, List[str]]
+    self_collision_ignore: null # Dict[str, List[str]]
+    self_collision_buffer: null # Dict[str, float]
+
+    use_global_cumul: True
+    mesh_link_names: null # List[str]
+    external_asset_path: null # Use this to add path for externally located assets/robot folder.
+
+    cspace:
+      joint_names: [
+        "FR_hip_joint", "FR_thigh_joint", "FR_calf_joint", "FL_hip_joint", "FL_thigh_joint", "FL_calf_joint",
+        "RR_hip_joint", "RR_thigh_joint", "RR_calf_joint", "RL_hip_joint", "RL_thigh_joint", "RL_calf_joint",
+        "widow_waist", "widow_shoulder", "widow_elbow", "widow_forearm_roll", "widow_wrist_angle",
+        "widow_wrist_rotate", "widow_left_finger", "widow_right_finger"] # List[str]
+      retract_config: [-0.1, 0.8, -1.5, 0.1, 0.8, -1.5, -0.1, 0.8, -1.5, 0.1, 0.8, -1.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.02, -0.02] # List[float]
+      null_space_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] # List[str]
+      cspace_distance_weight: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0] # List[str]
+      max_jerk: 500.0
+      max_acceleration: 15.0
