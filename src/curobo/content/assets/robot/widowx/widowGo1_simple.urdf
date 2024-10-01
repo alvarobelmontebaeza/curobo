@@ -390,7 +390,7 @@
 
   <!-- Attach Go1 to mobile base-->
   <joint name="floating_base" type="fixed" dont_collapse="true">
-      <origin rpy="0 0 0.0" xyz="0 0 0.45"/>
+      <origin rpy="0 0 0.0" xyz="0 0 0.4"/>
       <parent link="mobile_base_link_yaw"/>
       <child link="trunk"/>
       <axis xyz="0 0 0"/>

@@ -29,7 +29,7 @@
   </link>
   <joint name="widow_waist" type="revolute">
     <axis xyz="0 0 1"/>
-    <limit effort="10" lower="-3.141582653589793" upper="3.141582653589793" velocity="3.141592653589793"/> -->
+    <limit effort="10" lower="-3.141582653589793" upper="3.141582653589793" velocity="3.141592653589793"/>
     <origin rpy="0 0 0" xyz="0 0 0.072"/>
     <parent link="base_link"/>
     <child link="shoulder_link"/>
