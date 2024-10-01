@@ -405,7 +405,7 @@
   </material>
 
   <joint name="K1_mount" type="fixed">
-    <origin xyz="0 0 0" rpy="0 0 0.07"/>
+    <origin xyz="0 0 0.055" rpy="0 0 0"/>
     <parent link="trunk"/>
     <child link="sagittarius_base_link"/>
   </joint>
