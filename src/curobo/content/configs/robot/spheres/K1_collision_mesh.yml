@@ -1,0 +1,65 @@
+# Lula uses collision spheres to define the robot geometry in order to avoid
+# collisions with external obstacles.  If no spheres are specified, Lula will
+# not be able to avoid obstacles.
+robot: 'K1'
+collision_spheres:
+  link1:
+    - "center": [0.0, 0.001, 0.035]
+      "radius": 0.03668
+    - "center": [0.0, -0.003, 0.053]
+      "radius": 0.03668
+  link2:
+    - "center": [0.002, -0.002, 0.142]
+      "radius": 0.03141
+    - "center": [-0.002, -0.002, 0.034]
+      "radius": 0.03141
+    - "center": [0.0, -0.002, 0.106]
+      "radius": 0.03141
+    - "center": [-0.001, -0.002, 0.07]
+      "radius": 0.03141
+    - "center": [0.031, -0.008, 0.179]
+      "radius": 0.03641
+    - "center": [0.005, 0.006, 0.179]
+      "radius": 0.03641
+  link3:
+    - "center": [0.058, 0.001, -0.001]
+      "radius": 0.03086
+    - "center": [0.02, 0.001, -0.002]
+      "radius": 0.02996
+  link4:
+    - "center": [0.009, 0.001, -0.0]
+      "radius": 0.03088
+    - "center": [0.073, 0.001, -0.0]
+      "radius": 0.03088
+    - "center": [0.029, -0.027, 0.002]
+      "radius": 0.02902
+    - "center": [0.039, 0.001, 0.0]
+      "radius": 0.03088
+  link5:
+    - "center": [0.017, -0.0, 0.001]
+      "radius": 0.03365
+    - "center": [0.039, -0.0, 0.013]
+      "radius": 0.03365
+  link6:
+    - "center": [0.023, -0.0, 0.003]
+      "radius": 0.03366
+    - "center": [0.023, -0.0, 0.021]
+      "radius": 0.03366
+    - "center": [0.036, -0.043, 0.003]
+      "radius": 0.02366
+    - "center": [0.037, 0.038, -0.002]
+      "radius": 0.02366
+    - "center": [0.067, -0.024, 0.002]
+      "radius": 0.02306
+    - "center": [0.073, 0.015, 0.002]
+      "radius": 0.02185
+  link_gripper_left:
+    - "center": [0.035, 0.006, 0.0]
+      "radius": 0.02112
+    - "center": [0.003, 0.006, 0.001]
+      "radius": 0.02112
+  link_gripper_right:
+    - "center": [0.034, -0.007, 0.002]
+      "radius": 0.02055
+    - "center": [0.003, -0.007, 0.001]
+      "radius": 0.01998
