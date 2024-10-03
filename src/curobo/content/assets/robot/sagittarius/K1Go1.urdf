@@ -348,7 +348,7 @@
       <parent link="base"/>
       <child link="mobile_base_link_tx"/>
       <axis xyz="1 0 0"/>
-      <dynamics damping="10.0"/>
+      <dynamics damping="100.0"/>
       <limit effort="87" lower="-10.0" upper="10.0" velocity="0.5"/>
   </joint>
 
@@ -357,7 +357,7 @@
       <parent link="mobile_base_link_tx"/>
       <child link="mobile_base_link_ty"/>
       <axis xyz="0 1 0"/>
-      <dynamics damping="10.0"/>
+      <dynamics damping="100.0"/>
       <limit effort="87" lower="-10.0" upper="10.0" velocity="0.5"/>
   </joint>
 
