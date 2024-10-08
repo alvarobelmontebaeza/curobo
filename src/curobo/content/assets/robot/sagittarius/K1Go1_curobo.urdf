@@ -339,10 +339,59 @@
       </geometry>
     </visual>
   </link>
-  <!-- Go1 floating base -->
-  <joint name="floating_base" type="fixed" dont_collapse="true">
+  <link name="mobile_base_link_tx"/>
+  <link name="mobile_base_link_ty"/>
+  <link name="mobile_base_link_yaw"/>
+
+  <joint name="mobile_base_tx" type="prismatic">
       <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
       <parent link="base"/>
+      <child link="mobile_base_link_tx"/>
+      <axis xyz="1 0 0"/>
+      <dynamics damping="100.0"/>
+      <limit effort="87" lower="-10.0" upper="10.0" velocity="0.5"/>
+  </joint>
+
+  <joint name="mobile_base_ty" type="prismatic">
+      <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
+      <parent link="mobile_base_link_tx"/>
+      <child link="mobile_base_link_ty"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="100.0"/>
+      <limit effort="87" lower="-10.0" upper="10.0" velocity="0.5"/>
+  </joint>
+
+  <joint name="mobile_base_yaw" type="revolute">
+      <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
+      <parent link="mobile_base_link_ty"/>
+      <child link="mobile_base_link_yaw"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="10.0"/>
+      <limit effort="87" lower="-6.0" upper="6.0" velocity="1.50"/>
+  </joint>
+
+  <!-- <joint name="mobile_base_tz" type="prismatic">
+      <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
+      <parent link="mobile_base_link_ty"/>
+      <child link="mobile_base_link_tz"/>
+      <axis xyz="0 0 1"/>
+      <dynamics damping="10.0"/>
+      <limit effort="87" lower="-0.5" upper="0.5" velocity="1.0"/>
+  </joint>
+
+  <joint name="mobile_base_pitch" type="revolute">
+      <origin rpy="0 0 0.0" xyz="0 0 0.0"/>
+      <parent link="mobile_base_link_tz"/>
+      <child link="mobile_base_link_pitch"/>
+      <axis xyz="0 1 0"/>
+      <dynamics damping="10.0"/>
+      <limit effort="87" lower="-0.7" upper="0.7" velocity="1.50"/>
+  </joint> -->
+
+  <!-- Attach Go1 to mobile base-->
+  <joint name="floating_base" type="fixed" dont_collapse="true">
+      <origin rpy="0 0 0.0" xyz="0 0 0.45"/>
+      <parent link="mobile_base_link_yaw"/>
       <child link="trunk"/>
       <axis xyz="0 0 0"/>
   </joint>
