@@ -12,13 +12,13 @@
 robot_cfg:
   kinematics:
     use_usd_kinematics: False
-    usd_path: "robot/sagittarius/K1Go1.usd"
+    usd_path: "robot/sagittarius/K1Go1_curobo.usd"
     usd_robot_root: "/robot"
     isaac_usd_path: ""
     usd_flip_joints: {}
     usd_flip_joint_limits: []
 
-    urdf_path: "robot/sagittarius/K1Go1.urdf"
+    urdf_path: "robot/sagittarius/K1Go1_curobo.urdf"
     asset_root_path: "robot/sagittarius/"
     
     base_link: "base"
@@ -28,13 +28,41 @@ robot_cfg:
     extra_links: null
 
     #TODO: Add collision link names and spheres
-    collision_link_names: null
-    collision_spheres: null
-    collision_sphere_buffer: 0.005 # float or Dict[str, float]
+    collision_link_names: [
+      "sagittarius_base_link",
+      "link1",
+      "link2",
+      "link3",
+      "link4",
+      "link5",
+      "link6",
+      "link_gripper_left",
+      "link_gripper_right",
+    ]
+    collision_spheres: "spheres/K1Go1_collision_mesh.yml"
+    collision_sphere_buffer: 0.0 # float or Dict[str, float]
     extra_collision_spheres: {} # Dict[str, List[str]]
-    self_collision_ignore: null # Dict[str, List[str]]
-    self_collision_buffer: null # Dict[str, float]
-
+    self_collision_ignore: {
+      "sagittarius_base_link": ["link1"],
+      "link1": ["link2"],
+      "link2": ["link3"],
+      "link3": ["link4"],
+      "link4": ["link5"],
+      "link5": ["link6"],
+      "link6": ["link_gripper_left", "link_gripper_right"],
+      "link_gripper_left": ["link_gripper_right"],
+    }
+    self_collision_buffer: {
+      "sagittarius_base_link": 0.0,
+      "link1": 0.0,
+      "link2": 0.0,
+      "link3": 0.0,
+      "link4": 0.0,
+      "link5": 0.0,
+      "link6": 0.0,
+      "link_gripper_left": 0.0,
+      "link_gripper_right": 0.0,
+    }
     use_global_cumul: True
     mesh_link_names: null # List[str]
     external_asset_path: null # Use this to add path for externally located assets/robot folder.
